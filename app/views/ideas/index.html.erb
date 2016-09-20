@@ -1,1 +1,9 @@
 <h1>this is my first app ever a</h1>
+<% @ideas.each do |idea| %>
+<div class="panel-body">
+    <blockquote>
+        <p><%= idea.description %></p>
+        <small>by <%= idea.auther %></small>
+    </blockquote>
+</div>
+<% end %>
