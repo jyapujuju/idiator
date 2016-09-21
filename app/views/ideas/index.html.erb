@@ -1,7 +1,6 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-Add Idea
+<button type="button" class="btn btn-primary circle center-block " data-toggle="modal" data-target="#myModal" title="create new quote">
++
 </button>
-
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -25,16 +24,25 @@ Add Idea
     </div>
   </div>
 </div>
-<h1>this is my first app ever a</h1>
 <% @ideas.each do |idea| %>
 <div class="panel-body">
-    <blockquote>
-        <p><%= idea.description %></p>
-        <small>by <%= idea.author %></small>
 
+    <blockquote class="row">
+
+      <div class="col-xs-11" style="text-align:center;padding-left:10%;">
+        <p class="main-quote"><%= idea.description %></p>
+          <small>by <%= idea.author %></small>
+
+      </div>
+      <div class="col-xs-1" style="text-align:right;padding-top:20px;">
+
+
+    <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>
+    '.html_safe, idea_path(idea), method: :delete, data:{confirm: "are you sure?"} %>
+        <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_idea_path(idea) %>
+        </div>
     </blockquote>
-    <%= link_to 'Delete', idea_path(idea), method: :delete, class: 'btn btn-sm btn-danger', data:{confirm: "are you sure?"} %>
-    <%= link_to 'Revise', edit_idea_path(idea), class: 'btn btn-sm btn-success' %>
+
 </div>
 <% end %>
 

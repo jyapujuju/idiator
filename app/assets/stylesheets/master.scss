@@ -4,10 +4,9 @@ html,body {
 #wrap{
   min-height: 30%;
   height: auto;
-  margin: 0 auto -120px;
   padding: 0 0 120px;
 }
-.navbar-brand {
+.navbar-brand .main-quote{
   font-family: 'Pacifico';
 }
 .navbar-default {
@@ -20,4 +19,9 @@ html,body {
 #footer {
   height: 120px;
   background-color: #f5f5f5;
+}
+.circle {
+  border-radius: 50px !important;
+  height: 70px;
+  width: 70px;
 }

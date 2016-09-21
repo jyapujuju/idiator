@@ -10,12 +10,14 @@
 
 </head>
 <body>
-
-<%= render '/ideas/navbar' %>
-<div class="container">
-  <%= yield %>
+<div class="wrap">
+  <%= render '/ideas/navbar' %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </div>
-
 <%= render '/ideas/footer' %>
+
+
 </body>
 </html>
