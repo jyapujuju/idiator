@@ -31,6 +31,9 @@ Add Idea
     <blockquote>
         <p><%= idea.description %></p>
         <small>by <%= idea.author %></small>
+
     </blockquote>
+    <%= link_to 'Delete', idea_path(idea), method: :delete, class: 'btn btn-sm btn-danger', data:{confirm: "are you sure?"} %>
+    <%= link_to 'Revise', edit_idea_path(idea), class: 'btn btn-sm btn-success' %>
 </div>
 <% end %>
